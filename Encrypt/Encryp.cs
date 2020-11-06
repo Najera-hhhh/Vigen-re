@@ -8,10 +8,13 @@ namespace Encryp
     {
         public string TextEncrypt(string clave, string text){
             
+            if(string.IsNullOrWhiteSpace(clave) || string.IsNullOrWhiteSpace(text) )
+                return "error";
+
             List<char> ABCedario = ("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ").ToCharArray().ToList();
             char[] Col = clave.ToUpper().ToCharArray(); //clave
             char[] Row  = text.ToUpper().ToCharArray(); //texto
-
+            
             string Encriptation = "";
             int j = 0;
 
@@ -20,7 +23,7 @@ namespace Encryp
 
                 int ROW = ABCedario.IndexOf(Row[i]); //texto
                 int COL = ABCedario.IndexOf(Col[j]); //clave
-
+                    
                 if(ROW < 0 || COL < 0){
                     Encriptation += Row[i];
                     continue;
@@ -45,7 +48,9 @@ namespace Encryp
 
         public string TextDecrypt(string clave, string text)
         {
-
+            if(string.IsNullOrWhiteSpace(clave) || string.IsNullOrWhiteSpace(text) )
+                return "error";
+                
             List<char> ABCedario = ("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ").ToCharArray().ToList();
             char[] Col = clave.ToUpper().ToCharArray(); //clave
             char[] Row  = text.ToUpper().ToCharArray(); //texto

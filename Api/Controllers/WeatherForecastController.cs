@@ -47,6 +47,10 @@ namespace Pokecrypt.Controllers
         public IActionResult Post(EncrypRequestDto EncrypsDto)
         {
             Davici encrip = new Davici ();
+            dynamic pokemon = JsonConvert.DeserializeObject(GetItems("https://pokeapi.co/api/v2/pokemon/"+new Random().Next(255)+"/"));
+            if(string.IsNullOrWhiteSpace(EncrypsDto.Clave)){
+                EncrypsDto.Clave = pokemon.name;
+            }
             var final = _mapper.Map<EncrypRequestDto, Encryps>(EncrypsDto);
             final.Encript = encrip.TextEncrypt(EncrypsDto.Clave,EncrypsDto.Text);
             return Ok(final);

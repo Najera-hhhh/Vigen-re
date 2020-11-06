@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <label>Deja la clabe en blanco para obtener de clave a un !pokemon sorpresa¡(solo en la encriptacion)</label><br><br>
     <label>Clave</label>
     <input id="clave" type="text">
     <label>Texto</label>
@@ -34,6 +35,7 @@
                 .then(json => {
                     document.getElementById("response").innerHTML = "Clave: " + json.clave + "<br>" +
                         "Encriptado:" + json.encript + "<br> Texto ingresado: " + json.text + "<br> Lenguaje: " + json.lenguaje;
+                    document.getElementById("clave").value = json.clave;
                 });
         }
 
