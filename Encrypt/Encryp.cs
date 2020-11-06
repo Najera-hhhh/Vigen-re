@@ -65,8 +65,11 @@ namespace Encryp
             List<char> ABCedario;
             if (idioma == "Español")
                 ABCedario = ("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ").ToCharArray().ToList();
-            else
+            else{
                 ABCedario = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").ToCharArray().ToList();
+                 _maxletters = 26;
+            }
+                
             char[] Col = clave.ToUpper().ToCharArray(); //clave
             char[] Row = text.ToUpper().ToCharArray(); //texto
 
