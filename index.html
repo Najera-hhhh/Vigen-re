@@ -14,6 +14,7 @@
     <input id="text" type="text">
 
     <button onclick="crypt()">Encriptar</button>
+    <button onclick="Decrypt()">Desencriptar</button>
     <div id="response"></div>
     <script>
         function crypt() {
@@ -33,6 +34,27 @@
                 .then(json => {
                     document.getElementById("response").innerHTML = "Clave: " + json.clave + "<br>" +
                         "Encriptado:" + json.encript + "<br> Texto ingresado: " + json.text + "<br> Lenguaje: " + json.lenguaje;
+                });
+        }
+
+
+        function Decrypt() {
+            let obj = {
+                clave: document.getElementById("clave").value,
+                text: document.getElementById("text").value,
+                lenguaje: ""
+            }
+            fetch("https://localhost:5001/products3", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(obj)
+                })
+                .then(response => response.json())
+                .then(json => {
+                    document.getElementById("response").innerHTML = "Clave: " + json.clave + "<br>" +
+                        "Desencriptado:" + json.encript + "<br> Texto ingresado: " + json.text + "<br> Lenguaje: " + json.lenguaje;
                 });
         }
     </script>

@@ -67,6 +67,15 @@ namespace Pokecrypt.Controllers
             return Ok(final);
         }
 
+        [HttpPost("/products3")]
+        public IActionResult PostDescrypt(EncrypRequestDto EncrypsDto)
+        {
+            Davici encrip = new Davici ();
+            var final = _mapper.Map<EncrypRequestDto, Encryps>(EncrypsDto);
+            final.Encript = encrip.TextDecrypt(EncrypsDto.Clave,EncrypsDto.Text);
+            return Ok(final);
+        }
+
         private string GetItems(string filter)
         {
             var url = filter;
