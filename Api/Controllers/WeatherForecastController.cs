@@ -43,21 +43,6 @@ namespace Pokecrypt.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult EncryptGet([FromQuery] EncrypRequestDto request)
-        {
-
-            Encryps encryps = new Encryps()
-            {
-                Text = "0",
-                Encript = "",
-                Lenguaje = "",
-                Clave = ""
-            };
-
-            return Ok(encryps);
-        }
-
         [HttpPost]
         public IActionResult Post(EncrypRequestDto EncrypsDto)
         {
