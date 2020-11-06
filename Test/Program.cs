@@ -16,6 +16,7 @@ namespace Test
             Davici decrypt = new Davici();
 
             Console.WriteLine(decrypt.TextEncrypt("PIKACHU","Sometimes later becomes never. Do it now."));
+            Console.WriteLine(decrypt.TextDecrypt("PIKACHU","iwvevogta uavlm qmmoñln cmfet. kj xb woy."));
         }
     }
 }
