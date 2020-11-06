@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>Clave</label>
+    <input id="clave" type="text">
+    <label>Texto</label>
+    <input id="text" type="text">
+
+    <button onclick="crypt()">Encriptar</button>
+    <div id="response"></div>
+    <script>
+        function crypt() {
+            let obj = {
+                clave: document.getElementById("clave").value,
+                text: document.getElementById("text").value,
+                lenguaje: ""
+            }
+            fetch("https://localhost:5001/api/WeatherForecast", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(obj)
+                })
+                .then(response => response.json())
+                .then(json => {
+                    document.getElementById("response").innerHTML = "Clave: " + json.clave + "<br>" +
+                        "Encriptado:" + json.encript + "<br> Texto ingresado: " + json.text + "<br> Lenguaje: " + json.lenguaje;
+                });
+        }
+    </script>
+</body>
+
+</html>

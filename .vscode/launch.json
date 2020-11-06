@@ -5,15 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (console)",
+            "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Test/bin/Debug/netcoreapp3.1/Test.dll",
+            "program": "${workspaceFolder}/Api/bin/Debug/netcoreapp3.1/Pokecrypt.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Test",
-            "console": "integratedTerminal",
-            "stopAtEntry": false
+            "cwd": "${workspaceFolder}/Api",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
         },
         {
             "name": ".NET Core Attach",
