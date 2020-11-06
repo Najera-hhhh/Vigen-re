@@ -48,7 +48,7 @@
             let obj = {
                 clave: document.getElementById("clave").value,
                 text: document.getElementById("text").value,
-                lenguaje: ""
+                lenguaje: document.getElementById("idioma").value
             }
             fetch("https://localhost:5001/products3", {
                     method: "POST",
