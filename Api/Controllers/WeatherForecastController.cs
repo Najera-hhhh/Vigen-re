@@ -52,7 +52,7 @@ namespace Pokecrypt.Controllers
                 EncrypsDto.Clave = pokemon.name;
             }
             var final = _mapper.Map<EncrypRequestDto, Encryps>(EncrypsDto);
-            final.Encript = encrip.TextEncrypt(EncrypsDto.Clave,EncrypsDto.Text);
+            final.Encript = encrip.TextEncrypt(EncrypsDto.Clave,EncrypsDto.Text,EncrypsDto.Lenguaje);
             return Ok(final);
         }
 
@@ -61,7 +61,7 @@ namespace Pokecrypt.Controllers
         {
             Davici encrip = new Davici ();
             var final = _mapper.Map<EncrypRequestDto, Encryps>(EncrypsDto);
-            final.Encript = encrip.TextDecrypt(EncrypsDto.Clave,EncrypsDto.Text);
+            final.Encript = encrip.TextDecrypt(EncrypsDto.Clave,EncrypsDto.Text,EncrypsDto.Lenguaje);
             return Ok(final);
         }
 

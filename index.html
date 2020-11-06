@@ -12,8 +12,12 @@
     <label>Clave</label>
     <input id="clave" type="text">
     <label>Texto</label>
-    <input id="text" type="text">
-
+    <input id="text" type="text"><br>
+    <label>lenguaje</label>
+    <select id="idioma">
+        <option value="Español">Español</option>
+        <option value="Ingles">Ingles</option>
+    </select>
     <button onclick="crypt()">Encriptar</button>
     <button onclick="Decrypt()">Desencriptar</button>
     <div id="response"></div>
@@ -22,7 +26,7 @@
             let obj = {
                 clave: document.getElementById("clave").value,
                 text: document.getElementById("text").value,
-                lenguaje: ""
+                lenguaje: document.getElementById("idioma").value
             }
             fetch("https://localhost:5001/api/WeatherForecast", {
                     method: "POST",
