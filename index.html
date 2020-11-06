@@ -44,6 +44,8 @@
         }
 
 
+
+
         function Decrypt() {
             let obj = {
                 clave: document.getElementById("clave").value,
@@ -60,7 +62,8 @@
                 .then(response => response.json())
                 .then(json => {
                     document.getElementById("response").innerHTML = "Clave: " + json.clave + "<br>" +
-                        "Desencriptado:" + json.encript + "<br> Texto ingresado: " + json.text + "<br> Lenguaje: " + json.lenguaje;
+                        "Encriptado:" + json.encript + "<br> Texto ingresado: " + json.text + "<br> Lenguaje: " + json.lenguaje;
+                    document.getElementById("clave").value = json.clave;
                 });
         }
     </script>

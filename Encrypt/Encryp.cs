@@ -6,6 +6,7 @@ namespace Encryp
 {
     public class Davici
     {
+        int _maxletters = 27;
         public string TextEncrypt(string clave, string text, string idioma)
         {
 
@@ -15,8 +16,11 @@ namespace Encryp
 
             if (idioma == "Español")
                 ABCedario = ("ABCDEFGHIJKLMNÑOPQRSTUVWXYZ").ToCharArray().ToList();
-            else
+            else{
                 ABCedario = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").ToCharArray().ToList();
+                _maxletters = 26;
+            }
+                
 
             char[] Col = clave.ToUpper().ToCharArray(); //clave
             char[] Row = text.ToUpper().ToCharArray(); //texto
@@ -38,8 +42,8 @@ namespace Encryp
 
                 int NewLetter = ROW + COL;
 
-                if (NewLetter > 26)
-                    NewLetter = NewLetter - 27;
+                if (NewLetter > (_maxletters-1))
+                    NewLetter = NewLetter - _maxletters;
 
 
                 Encriptation += ABCedario.ElementAt(NewLetter);
@@ -84,7 +88,7 @@ namespace Encryp
                 int NewLetter = ROW - COL;
 
                 if (NewLetter < 0)
-                    NewLetter = 27 + NewLetter;
+                    NewLetter = _maxletters + NewLetter;
 
 
                 Encriptation += ABCedario.ElementAt(NewLetter);
