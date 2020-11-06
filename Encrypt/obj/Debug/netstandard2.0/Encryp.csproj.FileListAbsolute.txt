@@ -1,0 +1,9 @@
+/home/hhhh/Documentos/Encryptation/Encrypt/bin/Debug/netstandard2.0/Encryp.deps.json
+/home/hhhh/Documentos/Encryptation/Encrypt/bin/Debug/netstandard2.0/Encryp.dll
+/home/hhhh/Documentos/Encryptation/Encrypt/bin/Debug/netstandard2.0/Encryp.pdb
+/home/hhhh/Documentos/Encryptation/Encrypt/obj/Debug/netstandard2.0/Encryp.csprojAssemblyReference.cache
+/home/hhhh/Documentos/Encryptation/Encrypt/obj/Debug/netstandard2.0/Encryp.AssemblyInfoInputs.cache
+/home/hhhh/Documentos/Encryptation/Encrypt/obj/Debug/netstandard2.0/Encryp.AssemblyInfo.cs
+/home/hhhh/Documentos/Encryptation/Encrypt/obj/Debug/netstandard2.0/Encryp.csproj.CoreCompileInputs.cache
+/home/hhhh/Documentos/Encryptation/Encrypt/obj/Debug/netstandard2.0/Encryp.dll
+/home/hhhh/Documentos/Encryptation/Encrypt/obj/Debug/netstandard2.0/Encryp.pdb
